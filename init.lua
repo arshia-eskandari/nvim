@@ -90,6 +90,19 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Open terminal in a horizontal split (panel)
+vim.keymap.set('n', '<leader>tt', function()
+  vim.cmd 'split'
+  vim.cmd 'terminal'
+  vim.cmd 'startinsert' -- jump into terminal mode immediately
+end, { desc = '[T]erminal (split)' })
+
+-- Optional: vertical split terminal
+vim.keymap.set('n', '<leader>tT', function()
+  vim.cmd 'vsplit'
+  vim.cmd 'terminal'
+  vim.cmd 'startinsert'
+end, { desc = '[T]erminal (vsplit)' })
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
